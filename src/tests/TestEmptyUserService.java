@@ -17,13 +17,11 @@ public class TestEmptyUserService {
     mockAuditLog = new MockAuditLog();
     fakeUserStore = new FakeUserStore();
     userService = new SimpleUserService(mockAuditLog, fakeUserStore);
-    System.out.println("Before");
   }
 
 
   @Test
   public void hello() {
-    System.out.println("hi");
   }
   @Test
   public void testDefaultUserSrviceHasNoUsers() {

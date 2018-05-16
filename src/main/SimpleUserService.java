@@ -9,8 +9,6 @@ public class SimpleUserService implements UserService {
   public SimpleUserService(AuditLog auditLog, UserStore userStore) {
     this.auditLog = auditLog;
     this.userStore = userStore;
-    System.out.println("constructor");
-
   }
   @Override
   public List<User> users() {
@@ -19,7 +17,6 @@ public class SimpleUserService implements UserService {
 
   @Override
   public void register(String username) {
-    System.out.println("register");
     if (hasUser(username)) {
       auditLog.log("user", "duplicateregister", username);
     } else {

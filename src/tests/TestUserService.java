@@ -16,8 +16,6 @@ public class TestUserService {
 
   @Before
   public void myCreateUserService() {
-    System.out.println("before");
-
     mockAuditLog = new MockAuditLog();
     fakeUserStore = new FakeUserStore();
     userService = new SimpleUserService(mockAuditLog, fakeUserStore);
@@ -25,24 +23,14 @@ public class TestUserService {
   }
 
   @Test
-  public void hello() {
-    System.out.println("hi");
-  }
-  @Test
   public void testFindingUserByName() { //18.33
-    System.out.println("hi");
-
-    System.out.println("before");
-
     mockAuditLog = new MockAuditLog();
     fakeUserStore = new FakeUserStore();
     userService = new SimpleUserService(mockAuditLog, fakeUserStore);
 
     userService.register("bob");
-    System.out.println("hi");
 
     User user = userService.find("bob");
-    System.out.println("hi");
 
     assertNotNull(user);
     assertEquals("bob", user.getUsername());
